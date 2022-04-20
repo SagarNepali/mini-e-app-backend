@@ -3,8 +3,8 @@ package com.waa.minieappbackend.service.Impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
+//@Service
+//@RequiredArgsConstructor
 public class AuthServiceImpl{// implements AuthService {
 
 //    @Autowired

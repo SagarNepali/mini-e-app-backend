@@ -36,9 +36,11 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public List<Product> findAllProducts(Long id) {
-        return postRepo.findAllById(id).orElse(null);
+        return productRepo.findAllById(id).orElse(null);
     }
 
+
+    // This action is add product to CART
 //    @Override
 //    public void addProductToUser(Long id, Product p) {
 //        if(findUserById(id) != null) {
