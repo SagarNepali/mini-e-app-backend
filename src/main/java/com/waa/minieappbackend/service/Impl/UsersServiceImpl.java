@@ -1,12 +1,10 @@
 package com.waa.minieappbackend.service.Impl;
 
-import com.spring.assignmentOne.domain.Comment;
-import com.spring.assignmentOne.domain.Post;
-import com.spring.assignmentOne.domain.Users;
-import com.spring.assignmentOne.repo.CommentRepo;
-import com.spring.assignmentOne.repo.PostRepo;
-import com.spring.assignmentOne.repo.UsersRepo;
-import com.spring.assignmentOne.service.UsersService;
+import com.waa.minieappbackend.domain.Product;
+import com.waa.minieappbackend.domain.Users;
+import com.waa.minieappbackend.repo.ProductRepo;
+import com.waa.minieappbackend.repo.UsersRepo;
+import com.waa.minieappbackend.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +17,7 @@ public class UsersServiceImpl implements UsersService {
     UsersRepo usersRepo;
 
     @Autowired
-    PostRepo postRepo;
-
-    @Autowired
-    CommentRepo commentRepo;
+    ProductRepo productRepo;
 
     @Override
     public List<Users> findAllUsers() {
@@ -40,42 +35,28 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public List<Post> findAllPosts(Long id) {
+    public List<Product> findAllProducts(Long id) {
         return postRepo.findAllById(id).orElse(null);
     }
 
-    @Override
-    public void addPostToUser(Long id, Post p) {
-        if(findUserById(id) != null) {
-            p.setUser(findUserById(id));
-            postRepo.save(p);
-        }
-    }
-
-    @Override
-    public List<Users> findMoreThanOnePost(int count){
-        return usersRepo.findMoreThanOnePost(count);
-    }
+//    @Override
+//    public void addProductToUser(Long id, Product p) {
+//        if(findUserById(id) != null) {
+//            Users user = findUserById(id);
+//            user.setProducts();
+////            save(user);
+//        }
+//    }
 
     @Override
     public void deleteById(Long id){
         usersRepo.deleteById(id);
     }
 
-    @Override
-    public List<Users> usersWithAPostTitled(String title){
-        return usersRepo.findUsersByPostTitle(title);
-    }
-
-    @Override
-    public Post findUserByIdAndPost(Long userId, Long postId){
-        return postRepo.findById(postId).orElse(null);
-    }
-
-    @Override
-    public Comment findCommentByUserAndPostId(Long userId, Long postId, Long commentId){
-        return commentRepo.findCommentByUserAndPostIdCommentId(userId, postId, commentId);
-    }
+//    @Override
+//    public List<Users> usersWithAPostTitled(String title){
+//        return usersRepo.findUsersByPostTitle(title);
+//    }
 
     @Override
     public Users findUserByEmail(String username) {

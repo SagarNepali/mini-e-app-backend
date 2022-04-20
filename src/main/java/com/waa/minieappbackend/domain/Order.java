@@ -26,6 +26,9 @@ public class Order {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Product> productList;
 
+    @OneToOne
+    private Users user;
+
     // payment method ?
 
     // delivery ?

@@ -1,8 +1,7 @@
 package com.waa.minieappbackend.service;
 
-import com.spring.assignmentOne.domain.Comment;
-import com.spring.assignmentOne.domain.Post;
-import com.spring.assignmentOne.domain.Users;
+import com.waa.minieappbackend.domain.Product;
+import com.waa.minieappbackend.domain.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,19 +15,11 @@ public interface UsersService {
 
     void createUser(Users newUser);
 
-    List<Post> findAllPosts(Long id);
+    List<Product> findAllProducts(Long id);
 
-    void addPostToUser(Long id, Post p);
-
-    List<Users> findMoreThanOnePost(int n);
-
-    List<Users> usersWithAPostTitled(String s);
+//    void addProductToUser(Long id, Product p);
 
     void deleteById(Long id);
-
-    Post findUserByIdAndPost(Long userId, Long postId);
-
-    Comment findCommentByUserAndPostId(Long uId, Long pId, Long cId);
 
     Users findUserByEmail(String email);
 }

@@ -25,9 +25,7 @@ public class Product {
     private String image;
 
     @OneToOne
-
     private Rating rating;
-
 
 }
 //    @ManyToOne()
