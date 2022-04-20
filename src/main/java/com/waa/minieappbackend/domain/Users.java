@@ -22,15 +22,14 @@ public class Users {
     private String password;
     private String firstName;
     private String lastName;
-    private boolean enabled;
-    
 
-    @OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
-    @JsonManagedReference
+
     // cart, could be normalized to be just
     // Cart here, and the details could go inside that object.
     // but this is not Amazon
-    private List<Product> product;
+    // @OneToMany( mappedBy = "user", cascade = CascadeType.ALL )
+    @OneToMany()
+    private List<Product> products;
 
     @ManyToMany
     @JoinTable

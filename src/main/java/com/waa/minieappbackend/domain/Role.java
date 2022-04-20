@@ -16,5 +16,7 @@ public class Role {
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private int id;
 
+    // buyer, Seller, Admin
+    // This should be converted an Enum
     private String role;
 }

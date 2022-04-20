@@ -28,6 +28,7 @@ public class Product {
 
     private Rating rating;
 
+
 }
 //    @ManyToOne()
 //    @JoinColumn()
@@ -36,7 +37,7 @@ public class Product {
 //
 //    @OneToMany( mappedBy = "product", cascade = CascadeType.ALL )
 //    @JsonManagedReference
-//    private List<Comment> comments;
+//    private List<Rating> ratings;
 /**
  * {
  *       id: 1,
