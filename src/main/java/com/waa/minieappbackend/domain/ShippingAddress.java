@@ -14,13 +14,12 @@ import javax.persistence.Id;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Shipping {
+public class ShippingAddress {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    // address, city, postal code, country
     private String address;
     private String city;
     private int postalCode;
