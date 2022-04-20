@@ -27,4 +27,7 @@ public class Order {
     private List<Product> productList;
 
     // payment method ?
+
+    // delivery ?
+
 }

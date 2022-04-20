@@ -1,4 +1,4 @@
-package com.waa.minieappbackend.domain.dto.request;
+package com.waa.minieappbackend.models.request;
 
 
 import lombok.Builder;
