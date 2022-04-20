@@ -1,7 +1,5 @@
 package com.waa.minieappbackend.controller;
 
-import com.spring.assignmentOne.domain.Post;
-import com.spring.assignmentOne.service.PostService;
 import com.waa.minieappbackend.domain.Product;
 import com.waa.minieappbackend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Post controller
- * @author En. Abraham Bisrat
- *
- */
 
 @RestController
-@RequestMapping("/api/v1/posts")
+@RequestMapping("/api/v1/products")
 public class ProductController {
 
     @Autowired
@@ -53,20 +46,20 @@ public class ProductController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "")
-    public void newPost(@RequestBody Post newPost){
-        postService.save(newPost);
+    public void newPost(@RequestBody Product newProduct){
+        productService.save(newProduct);
     }
 
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updatePost(@PathVariable Long id, @RequestBody Post post){
-        postService.updateById(id, post);
+    public void updatePost(@PathVariable Long id, @RequestBody Product product){
+        productService.updateById(id, product);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping(value = "/{id}")
     public void deleteById(@PathVariable Long id){
-        postService.deleteById(id);
+        productService.deleteById(id);
     }
 
 //    @GetMapping("/filter")
