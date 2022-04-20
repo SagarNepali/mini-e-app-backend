@@ -2,9 +2,11 @@ spring:
   application:
     name: mini-e-commerce-app
   datasource:
-    password: ${DB_PASSWORD}
     url: jdbc:mysql://172.17.18.6:3306/miniEcommerceApp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: ${DB_USER}
+    username: ${DB_PASSWORD}
+    password: ${DB_USER}
+#    password: reconov
+#    username: reconov
   jpa:
     hibernate:
       ddl-auto: update
