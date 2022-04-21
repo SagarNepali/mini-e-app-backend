@@ -1,9 +1,9 @@
 package com.waa.minieappbackend.dao;
 
-import com.waa.minieappbackend.models.DAOUser;
+import com.waa.minieappbackend.models.User;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserDao extends CrudRepository<DAOUser, Long> {
+public interface UserDao extends CrudRepository<User, Long> {
 
-    DAOUser findByUsername(String username);
+    User findByUsername(String username);
 }

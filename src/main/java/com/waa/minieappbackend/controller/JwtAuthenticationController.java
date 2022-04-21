@@ -1,11 +1,7 @@
 package com.waa.minieappbackend.controller;
 
 import com.waa.minieappbackend.models.request.AuthenticationRequest;
-import com.waa.minieappbackend.models.response.AuthenticationResponse;
 import com.waa.minieappbackend.service.AuthService;
-import com.waaAssig.Assignment.model.JwtRequest;
-import com.waaAssig.Assignment.model.JwtResponse;
-import com.waaAssig.Assignment.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

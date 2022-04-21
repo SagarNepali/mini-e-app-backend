@@ -4,7 +4,7 @@ package com.waa.minieappbackend.controller;
 import com.waa.minieappbackend.config.JwtTokenUtil;
 import com.waa.minieappbackend.models.request.AuthenticationRequest;
 import com.waa.minieappbackend.models.response.AuthenticationResponse;
-import com.waa.minieappbackend.service.MyUserDetailsService;
+import com.waa.minieappbackend.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +22,7 @@ public class AuthController {
     private AuthenticationManager authManager;
 
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private JwtUserDetailsService myUserDetailsService;
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;

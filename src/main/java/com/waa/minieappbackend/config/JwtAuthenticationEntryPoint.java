@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.Serializable;
 
 @Component
-@Slf4j
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 
 	private static final long serialVersionUID = -7858869558953243875L;

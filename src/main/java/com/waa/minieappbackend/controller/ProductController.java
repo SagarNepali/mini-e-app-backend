@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/products")
+@CrossOrigin
 public class ProductController {
 
     @Autowired
@@ -18,34 +19,18 @@ public class ProductController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    public List<Product> allProductsDefault(){ // default -> redirect to V1 ( empty header )
-        return allProductsV1();
-    }
-
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping( headers = "X-API-VERSION=1")
     public List<Product> allProductsV1(){
         return productService.findAll();
     }
 
-//    @ResponseStatus(HttpStatus.OK)
-//    @GetMapping( headers = "X-API-VERSION=2")       // versioning has changed to uri
-//    public List<ProductDto> allProductsV2(){
-//        return postService.findAllDto();
-//    }
 
     @GetMapping(value = "/{id}")
     public List<Product> getProductById(@PathVariable("id") Long id){
         return productService.findAllById(id);
     }
 
-//    @GetMapping( value = "/{id}", headers = "X-API-VERSION=2")
-//    public PostDto getPostByIdDto(@PathVariable("id") Long id){
-//        return postService.findByIdDto(id);
-//    }
-
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(value = "")
+    @PostMapping
     public void newPost(@RequestBody Product newProduct){
         productService.save(newProduct);
     }
@@ -61,10 +46,5 @@ public class ProductController {
     public void deleteById(@PathVariable Long id){
         productService.deleteById(id);
     }
-
-//    @GetMapping("/filter")
-//    public List<PostDto> filtered(@RequestParam String author){
-//        return postService.filterByAuthor(author);
-//    }
 
 }

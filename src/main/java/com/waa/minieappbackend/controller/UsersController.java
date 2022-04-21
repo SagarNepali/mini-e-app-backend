@@ -16,13 +16,8 @@ public class UsersController {
     @Autowired
     UsersService usersService;
 
-    @GetMapping()
-    public String index(){
-        return ("<h1>Welcome to Users endpoint</h1>");
-    }
-
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/")
+    @GetMapping
     public List<Users> findAllUsers(){
         return usersService.findAllUsers();
     }
@@ -34,7 +29,7 @@ public class UsersController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/")
+    @PostMapping
     public void saveNewUser(@RequestBody Users newUser){
         usersService.createUser(newUser);
     }
