@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: mini-e-commerce-app
+  datasource:
+    url: jdbc:mysql://172.17.18.6:3306/miniEcommerceApp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: ${DB_PASSWORD}
+    password: ${DB_USER}
+#    password: reconov
+#    username: reconov
+  jpa:
+    hibernate:
+      ddl-auto: update
+    #      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    show-sql: true
+    defer-datasource-initialization: true
+    generate-ddl: true
+  sql:
+    init:
+      mode: always
+  main:
+    banner-mode: "console"
+    allow-circular-references: true
+server:
+  port: 4000
+
+jwt:
+  secret: 'someReallyComplicatedStringFromFileSomewhere'
