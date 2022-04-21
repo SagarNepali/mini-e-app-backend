@@ -1,5 +1,6 @@
 package com.waa.minieappbackend.config;
 
+import com.waa.minieappbackend.service.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

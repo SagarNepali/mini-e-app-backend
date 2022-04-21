@@ -1,8 +1,8 @@
 package com.waa.minieappbackend.service;
 
-import com.waaAssig.Assignment.dao.UserDao;
-import com.waaAssig.Assignment.model.DAOUser;
-import com.waaAssig.Assignment.model.UserDTO;
+import com.waa.minieappbackend.dao.UserDao;
+import com.waa.minieappbackend.domain.dto.UsersDto;
+import com.waa.minieappbackend.models.DAOUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.User;
@@ -33,7 +33,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 				new ArrayList<>());
 	}
 	
-	public DAOUser save(UserDTO user) {
+	public DAOUser save(UsersDto user) {
 		DAOUser newUser = new DAOUser();
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));

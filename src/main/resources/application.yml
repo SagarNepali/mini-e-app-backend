@@ -21,6 +21,8 @@ spring:
   sql:
     init:
       mode: always
+  main:
+    banner-mo
 server:
   port: 4000
 
