@@ -2,6 +2,7 @@ package com.waa.minieappbackend.service;
 
 import com.waa.minieappbackend.domain.Product;
 import com.waa.minieappbackend.domain.Users;
+import com.waa.minieappbackend.domain.dto.UsersDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,8 @@ import java.util.List;
 public interface UsersService {
 
     List<Users> findAllUsers();
+
+    List<UsersDto> findAllDto();
 
     Users findUserById(Long id);
 
@@ -22,4 +25,6 @@ public interface UsersService {
     void deleteById(Long id);
 
     Users findUserByEmail(String email);
+
+    UsersDto findUserByEmailDto(String email);
 }
