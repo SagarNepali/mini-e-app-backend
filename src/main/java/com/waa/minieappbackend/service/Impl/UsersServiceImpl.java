@@ -56,17 +56,6 @@ public class UsersServiceImpl implements UsersService {
         return productRepo.findAllById(id).orElse(null);
     }
 
-
-    // This action is add product to CART
-//    @Override
-//    public void addProductToUser(Long id, Product p) {
-//        if(findUserById(id) != null) {
-//            Users user = findUserById(id);
-//            user.setProducts();
-////            save(user);
-//        }
-//    }
-
     @Override
     public void deleteById(Long id){
         usersRepo.deleteById(id);
