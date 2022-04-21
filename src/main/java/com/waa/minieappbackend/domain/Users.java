@@ -23,7 +23,6 @@ public class Users {
     private String firstName;
     private String lastName;
 
-
     // cart, could be normalized to be just
     // Cart here, and the details could go inside that object.
     // but this is not Amazon
